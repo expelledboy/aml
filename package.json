@@ -1,0 +1,31 @@
+{
+  "name": "aml",
+  "version": "1.0.0",
+  "description": "Anthony's Markup Language",
+  "main": "src/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "pegjs": "^0.10.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "build": "pegjs -o src/parser.js grammar.pegjs",
+    "trace": "node ./src/trace-spec.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expelledboy/aml.git"
+  },
+  "keywords": [],
+  "author": "expelledboy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/expelledboy/aml/issues"
+  },
+  "homepage": "https://github.com/expelledboy/aml#readme"
+}

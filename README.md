@@ -42,39 +42,40 @@ Possible extensions
 
 JSON:
 
-```
-{"widget": {
+```json
+{
+  "widget": {
     "debug": "on",
     "window": {
-        "title": "Sample Konfabulator Widget",
-        "name": "main_window",
-        "width": 500,
-        "height": 500
+      "title": "Sample Konfabulator Widget",
+      "name": "main_window",
+      "width": 500,
+      "height": 500
     },
-    "image": { 
-        "src": "Images/Sun.png",
-        "name": "sun1",
-        "hOffset": 250,
-        "vOffset": 250,
-        "alignment": "center"
+    "image": {
+      "src": "Images/Sun.png",
+      "name": "sun1",
+      "hOffset": 250,
+      "vOffset": 250,
+      "alignment": "center"
     },
     "text": {
-        "data": "Click Here",
-        "size": 36,
-        "style": "bold",
-        "name": "text1",
-        "hOffset": 250,
-        "vOffset": 100,
-        "alignment": "center",
-        "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
+      "data": "Click Here",
+      "size": 36,
+      "style": "bold",
+      "name": "text1",
+      "hOffset": 250,
+      "vOffset": 100,
+      "alignment": "center",
+      "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
     }
-}}
-
+  }
+}
 ```
 
 XML
 
-```
+```xml
 <widget>
     <debug>on</debug>
     <window title="Sample Konfabulator Widget">
@@ -100,30 +101,68 @@ XML
 
 ```
 
+Yaml
+
+```yaml
+widget:
+  debug: 'on'
+  window:
+    title: Sample Konfabulator Widget
+    name: main_window
+    width: 500
+    height: 500
+  image:
+    src: Images/Sun.png
+    name: sun1
+    hOffset: 250
+    vOffset: 250
+    alignment: center
+  text:
+    data: Click Here
+    size: 36
+    style: bold
+    name: text1
+    hOffset: 250
+    vOffset: 100
+    alignment: center
+    onMouseUp: sun1.opacity = (sun1.opacity / 100) * 90;
+```
+
 AML
 
 ```
-.widget.
-..debug. on
-..window.
-...title. Sample Konfabulator Widget
-...name. main_window
-...width. 500
-...height. 500
-..image.
-...src. Images/Sun.png
-...name. sun1
-...hOffset. 250
-...vOffset. 250
-...alignment. center
-..text.
-...data. Click Here
-...size. 36
-...style. bold
-...name. text1
-...hOffset. 250
-...vOffset. 100
-...alignment. center
-...onMouseUp. sun1.opacity = (sun1.opacity / 100) * 90;
+widget.
+.debug. on
+.window.
+..title. Sample Konfabulator Widget
+..name. main_window
+..width. 500
+..height. 500
+.image.
+..src. Images/Sun.png
+..name. sun1
+..hOffset. 250
+..vOffset. 250
+..alignment. center
+.text.
+..data. Click Here
+..size. 36
+..style. bold
+..name. text1
+..hOffset. 250
+..vOffset. 100
+..alignment. center
+..onMouseUp. sun1.opacity = (sun1.opacity / 100) * 90;
+```
 
+### Development
+
+Load vim syntax file
+
+```viml
+set ft=aml
+source './syntax/aml.vim'
+
+" if you are using vim-polygot add before loading
+let g:polyglot_disabled = ['aml']
 ```
